@@ -49,7 +49,7 @@ async def _(event):
     packname = f"{userid}'s @AmazerS_xD kang Pack"
     packshortname = f"AmazerS_{userid}"  # format: Uni_Borg_userid
 
-    await event.edit("Inviting this sticker pack over my pack ^_^")
+    await event.edit("Roses are red violets are blue, kanging this sticker so my pacc looks cool ^_^")
 
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
@@ -58,7 +58,7 @@ async def _(event):
         with BytesIO(file) as mem_file, BytesIO() as sticker:
             resize_image(mem_file, sticker)
             sticker.seek(0)
-            uploaded_sticker = await borg.upload_file(sticker, file_name="@DraXCommunity_Sticker.png")
+            uploaded_sticker = await borg.upload_file(sticker, file_name="@AmazerS_xD_Sticker.png")
             if not await stickerset_exists(bot_conv, packshortname):
                 await silently_send_message(bot_conv, "/cancel")
                 response = await silently_send_message(bot_conv, "/newpack")
