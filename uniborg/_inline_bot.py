@@ -189,13 +189,21 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     )
         else:
             result = builder.article(
-                "© @UniBorg",
-                text="""I is Alive because of my boss @AmazerS_xD""",
+                "© @AmazerS_xD",
+                text="""**Custom Built TGUserbot By** @AmazerS_xD
+                        **Verified Account:** ✅
+                        **Official Channel:** No channel yet
+                        
+                        **Python 3.7.4 (default, Sep 12 2019, 01:19:52)** 
+                        **[GCC 7.4.0]**
+                        **Telethon 1.10.3**
+                        
+                        **Custom Built Fork:** https://github.com/Amazers03/uniborg1/""",
                 buttons=[
                     [custom.Button.url("Owner", "https://t.me/AmazerS_xD"), custom.Button.url(
                         "Deploy", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FAmazers03%2Funiborg1&template=https%3A%2F%2Fgithub.com%2FAmazers03%2Funiborg1")],
                     [custom.Button.url(
-                        "Source Code", "https://github.com/Dc5000/DraXHub")]
+                        "Source", "https://github.com/Amazers03/unibog1")]
                 ],
                 link_preview=False
             )
