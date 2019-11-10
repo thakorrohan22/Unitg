@@ -190,10 +190,10 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "© @UniBorg",
-                text="""Join @DraXCommunity""",
+                text="""I is Alive because of my boss @AmazerS_xD""",
                 buttons=[
-                    [custom.Button.url("Join the Channel", "https://t.me/DraXGiveaways"), custom.Button.url(
-                        "Join the Group", "https://t.me/DraXCommunity")],
+                    [custom.Button.url("Owner", "https://t.me/AmazerS_xD"), custom.Button.url(
+                        "Deploy", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FAmazers03%2Funiborg1&template=https%3A%2F%2Fgithub.com%2FAmazers03%2Funiborg1")],
                     [custom.Button.url(
                         "Source Code", "https://github.com/Dc5000/DraXHub")]
                 ],
