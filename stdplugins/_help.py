@@ -1,8 +1,11 @@
+"""COMMAND : .info, .dc, .help <plugin_name>"""
+
 import sys
 from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
 
-@borg.on(admin_cmd(pattern="help ?(.*)", allow_sudo=True))  # pylint:disable=E0602
+
+@borg.on(admin_cmd(pattern="info ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -10,11 +13,9 @@ async def _(event):
     if splugin_name in borg._plugins:
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
-        s_help_string = ""
-    help_string = """`Hi, I am a Bot made by @AmazerS_xD with @UniBorg. I am Running.. 
-Python {}
-Telethon {}`
-""".format(
+        s_help_string = "use .info <module_name>"
+    help_string = """**Custom Built By** @amnd33p ) \n**Verified Account**: ✅\n**Official Channel**: https://t.me/Xpl0iter\n
+**Custom Built Fork**: https://github.com/cHAuHaNz/TGUserBot/""".format(
         sys.version,
         __version__
     )
@@ -50,4 +51,22 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
+    await event.edit("""Telethon UserBot custom built by @amnd33p""")
+
+
+@borg.on(admin_cmd(pattern="help (.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    plugin_name = event.pattern_match.group(1)
+    if plugin_name in borg._plugins:
+        help_string = borg._plugins[plugin_name].__doc__
+        unload_string = f"Use `.uninstall {plugin_name}` to remove this plugin.\n  © @amnd33p"
+        if help_string:
+            plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
+        else:
+            plugin_syntax = f"No DOCSTRING has been setup for {plugin_name} plugin."
+    else:
+        plugin_syntax = "Enter valid **Plugin** name.\nDo `.stdplugins` or `.info` to get list of valid plugin names."
+    await event.edit(plugin_syntax)
     await event.edit("""Telethon UserBot powered by @UniBorg""")
