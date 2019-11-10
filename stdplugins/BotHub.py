@@ -188,7 +188,7 @@ async def _(event):
             
             "HERO💪🏻💪",
             
-            "💪🏻MAYUR KARANIYA💪🏻",
+            "💪🏻@AmazerS_xD💪🏻",
             
         ]
 
